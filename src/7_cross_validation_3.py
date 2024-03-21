@@ -13,6 +13,7 @@ param_range = np.logspace(-6, -2.3, 5)  # 在对数空间中生成5个值，用�
 train_loss, test_loss = validation_curve(
     SVC(), X, y, param_name='gamma', param_range=param_range, cv=10,
     scoring='neg_mean_squared_error')
+
 train_loss_mean = -np.mean(train_loss, axis=1)
 test_loss_mean = -np.mean(test_loss, axis=1)
 
